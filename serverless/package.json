@@ -1,0 +1,8 @@
+{
+    "name": "memos-backup",
+    "version": "1.0.0",
+    "description": "Infrastructure for memos backup",
+    "dependencies": {
+      "serverless": "^3.38.0"
+    }
+  }

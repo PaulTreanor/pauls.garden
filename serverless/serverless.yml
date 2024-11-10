@@ -1,0 +1,60 @@
+service: pauls-garden-backup
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: eu-west-1
+  stackName: ${self:service}-${self:provider.stage}
+  stage: ${opt:stage, 'prod'}
+
+resources:
+  Resources:
+    PaulsGardenBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:service}-${self:provider.stage}
+        VersioningConfiguration:
+          Status: Enabled
+        LifecycleConfiguration:
+          Rules:
+            - Id: KeepLatestOnly
+              Status: Enabled
+              NoncurrentVersionExpiration:
+                NewerNoncurrentVersions: 1
+                NoncurrentDays: 1
+    
+    PaulsGardenBackupUser:
+      Type: AWS::IAM::User
+      Properties:
+        UserName: ${self:service}-backup-user-${self:provider.stage}
+        Policies:
+          - PolicyName: BackupAccess
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: Allow
+                  Action:
+                    - s3:PutObject
+                    - s3:GetObject
+                    - s3:ListBucket
+                  Resource:
+                    - !GetAtt PaulsGardenBucket.Arn
+                    - !Join ['', [!GetAtt PaulsGardenBucket.Arn, '/*']]
+
+    PaulsGardenBackupUserAccessKey:
+      Type: AWS::IAM::AccessKey
+      Properties:
+        UserName: !Ref PaulsGardenBackupUser
+
+  Outputs:
+    BackupBucketName:
+      Value: !Ref PaulsGardenBucket
+      Description: Name of the S3 bucket for backups
+    
+    BackupUserAccessKey:
+      Value: !Ref PaulsGardenBackupUserAccessKey
+      Description: Access key ID for backup user
+    
+    BackupUserSecretKey:
+      Value: !GetAtt PaulsGardenBackupUserAccessKey.SecretAccessKey
+      Description: Secret access key for backup user
