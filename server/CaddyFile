@@ -1,0 +1,3 @@
+pauls.garden {
+    reverse_proxy memos:5230
+}
