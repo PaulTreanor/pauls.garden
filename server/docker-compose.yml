@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   memos:
     image: neosmemo/memos:latest
@@ -7,7 +5,7 @@ services:
     volumes:
       - ./data:/var/opt/memos
     ports:
-      - "127.0.0.1:5230:5230" 
+      - "127.0.0.1:5230:5230"
     restart: always
     networks:
       - internal_network
@@ -17,7 +15,7 @@ services:
     container_name: caddy
     ports:
       - "80:80"
-      - "443:443"  
+      - "443:443"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
@@ -29,3 +27,7 @@ services:
 networks:
   internal_network:
     driver: bridge
+
+volumes:
+  caddy_data:
+  caddy_config:
