@@ -1,5 +1,4 @@
 pauls.garden {
-	tls internal
 	reverse_proxy memos:5230
 }
 
