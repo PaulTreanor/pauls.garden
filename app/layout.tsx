@@ -20,7 +20,7 @@ export default function RootLayout({
           <header className="mb-8 flex justify-between items-center">
             <h1 className="text-3xl font-semibold text-[#3a5a40]"><Link href="/">🌲 Pauls.Garden </Link></h1>
             <nav>
-            <Link href="/welcome-to-pauls-garden" className="text-[#3a5a40] hover:underline">About</Link>
+            <Link href="/2024-11-11-welcome-to-pauls-garden/" className="text-[#3a5a40] hover:underline">About</Link>
             </nav>
           </header>
           <div className="mb-8 p-4 bg-[#e6ede8] rounded-lg text-[#3a5a40] text-sm">
