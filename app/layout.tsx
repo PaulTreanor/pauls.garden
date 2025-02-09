@@ -23,6 +23,9 @@ export default function RootLayout({
             <Link href="/welcome-to-pauls-garden" className="text-[#3a5a40] hover:underline">About</Link>
             </nav>
           </header>
+          <div className="mb-8 p-4 bg-[#e6ede8] rounded-lg text-[#3a5a40] text-sm">
+			      🚧 This site is a work in progress! I'm still adding features.
+          </div>
           {children}
         </main>
       </body>
