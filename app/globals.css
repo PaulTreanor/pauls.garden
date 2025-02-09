@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+}
+
+@layer components {
+  .prose {
+    @apply max-w-none;
+  }
+  
+  .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    @apply text-[#3a5a40] font-semibold mb-4;
+  }
+  
+  .prose p {
+    @apply mb-4;
+  }
+  
+  .prose a {
+    @apply text-[#588157] underline;
+  }
+  
+  .prose pre {
+    @apply bg-[#e9e5e3] p-4 rounded-md overflow-x-auto;
+  }
+  
+  .prose code {
+    @apply bg-[#e9e5e3] px-1 py-0.5 rounded;
+  }
+}
+
