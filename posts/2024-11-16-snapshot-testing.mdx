@@ -1,0 +1,12 @@
+---
+title: "Snapshot testing is never worth doing"
+date: "2024-11-16"
+tags: ["code", "testing", "js"]
+---
+
+Yes, I know there is a way to do them right...they are good for detecting unintended side effects...they are for mature applications...but I just don't think they're worth it.
+
+1. What are you even testing? Tests should have names describing what you're testing, snapshot tests don't.
+2. They are flakey by design. Flakey tests are bad.
+3. Everyone ignores them anyways so none of their benefits matter.
+4. They waste everyone's time, over and over and over again. 
