@@ -1,0 +1,27 @@
+---
+title: "Showing off code blocks"
+date: "2025-02-09"
+---
+
+Backticks work `console.log("hello")`.
+
+Multiline codeblocks also works but there's no syntax highlighting yet:
+
+```tsx
+interface Props {
+	name: string;
+}
+
+const Greeting: React.FC<Props> = ({ name }) => {
+	return (
+		<div>
+			<h1>Hello, {name}!</h1>
+			<p>Welcome to my digital garden.</p>
+		</div>
+	);
+};
+
+export default Greeting;
+
+
+```
