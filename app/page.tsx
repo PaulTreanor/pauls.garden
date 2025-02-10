@@ -32,6 +32,7 @@ export default async function Home() {
           )}
           <div className="text-sm text-[#6b7280] mb-4">{post.date}</div>
           <MDXRemote source={post.content} />
+          <hr className='mt-10'/>
         </article>
       ))}
     </div>
