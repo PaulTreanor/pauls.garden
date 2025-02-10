@@ -28,7 +28,17 @@ export default async function Post({ params }: { params: { slug: string } }) {
   return (
     <div className="prose">
       {data.title && <h1 className="text-3xl font-semibold mb-2">{data.title}</h1>}
-      <div className="text-sm text-[#6b7280] mb-4">{data.date}</div>
+      <div className="flex items-center gap-3 text-sm mb-4">
+				<span className="text-[#6b7280]">{data.date}</span>
+				{data.tags?.map((tag: string) => (
+					<span
+						key={tag}
+						className="px-2 py-1 bg-[#e6ede8] rounded-full text-xs"
+					>
+						{tag}
+					</span>
+				))}
+			</div>
       <MDXRemote 
         source={content} 
         options={{

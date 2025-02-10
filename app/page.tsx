@@ -20,7 +20,8 @@ export default async function Home() {
 		return {
 			slug: filename.replace('.mdx', ''),
 			title: data.title,
-			date: data.date,
+      date: data.date,
+      tags: data.tags,
 			content,
 		}
 	}).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -36,7 +37,17 @@ export default async function Home() {
 							</a>
 						</h2>
 					)}
-					<div className="text-sm text-[#6b7280] mb-4">{post.date}</div>
+					<div className="flex items-center gap-3 text-sm mb-4">
+						<span className="text-[#6b7280]">{post.date}</span>
+						{post.tags?.map((tag: string) => (
+							<span
+								key={tag}
+								className="px-2 py-1 bg-[#e6ede8] rounded-full text-xs"
+							>
+								{tag}
+							</span>
+						))}
+					</div>
 					<MDXRemote 
 						source={post.content}
 						options={{
