@@ -32,7 +32,7 @@
   .prose code {
     @apply bg-[#e9e5e3] px-1 py-0.5 rounded;
   }
-  
+
   .prose ul {
     @apply list-disc list-inside mb-4;
   }
@@ -44,6 +44,14 @@
   .prose li {
     @apply mb-1;
   }
+
+  .prose blockquote {
+		@apply pl-4 border-l-4 border-[#588157] my-6 text-gray-600 italic;
+	}
+
+	.prose blockquote p {
+		@apply mb-0;
+	}
 }
 
 
