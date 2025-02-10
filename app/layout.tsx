@@ -24,7 +24,11 @@ export default function RootLayout({
             </nav>
           </header>
           <div className="mb-8 p-4 bg-[#e6ede8] rounded-lg text-[#3a5a40] text-sm">
-			      🚧 This site is a work in progress! I'm still adding features.
+            🚧 This site is a work in progress!
+            <span className="flex items-center gap-2">
+				<span>I still need to add a search bar so use </span> Use <kbd className="px-1 py-0.5 bg-[#588157] text-white rounded">Ctrl/⌘ F</kbd> for now
+			</span>
+            
           </div>
           {children}
         </main>
