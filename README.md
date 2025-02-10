@@ -26,3 +26,10 @@ npm run build
 - MDX - Markdown with JSX support
 - Tailwind CSS - Styling
 - ShadCN/UI - components
+
+## Design
+
+- Soft background green - `#e6ede8` <span style="display: inline-block; width: 1em; height: 1em; background: #e6ede8; border: 1px solid #999;"></span>
+- Soft background champagne - `#f8f5f2` <span style="display: inline-block; width: 1em; height: 1em; background: #f8f5f2; border: 1px solid #999;"></span>
+- Medium link green - `#588157` <span style="display: inline-block; width: 1em; height: 1em; background: #588157; border: 1px solid #999;"></span>
+- Dark forest green - `#3a5a40` <span style="display: inline-block; width: 1em; height: 1em; background: #3a5a40; border: 1px solid #999;"></span>
