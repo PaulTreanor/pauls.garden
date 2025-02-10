@@ -26,11 +26,16 @@
   }
   
   .prose pre {
-    @apply bg-[#e9e5e3] p-4 rounded-md overflow-x-auto;
+    @apply p-4 rounded-lg overflow-x-auto;
+  }
+  
+  .prose pre > code {
+    @apply bg-transparent p-0;
+    counter-reset: line;
   }
   
   .prose code {
-    @apply bg-[#e9e5e3] px-1 py-0.5 rounded;
+    @apply rounded px-1.5 py-0.5 bg-gray-100 text-gray-900;
   }
 
   .prose ul {
@@ -52,6 +57,22 @@
 	.prose blockquote p {
 		@apply mb-0;
 	}
+
+  /* Optional: Add line numbers */
+  .prose [data-line] {
+    @apply px-4;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .prose [data-highlighted-line] {
+    @apply bg-gray-700/50;
+  }
+
+  /* Optional: Style inline code differently from block code */
+  .prose :not(pre) > code {
+    @apply text-sm;
+  }
 }
 
 
