@@ -32,5 +32,18 @@
   .prose code {
     @apply bg-[#e9e5e3] px-1 py-0.5 rounded;
   }
+  
+  .prose ul {
+    @apply list-disc list-inside mb-4;
+  }
+  
+  .prose ol {
+    @apply list-decimal list-inside mb-4;
+  }
+  
+  .prose li {
+    @apply mb-1;
+  }
 }
+
 
