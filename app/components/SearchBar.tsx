@@ -63,7 +63,7 @@ export default function SearchBar() {
   const handleResultClick = (slug: string) => {
     setQuery('')
     setResults([])
-    router.push(`/${slug}`)
+    router.push(`/${slug}/`)
   }
 
   return (
