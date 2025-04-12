@@ -9,6 +9,7 @@ function generateRSSFeed() {
   
   // Sort posts by date, newest first
   const sortedPosts = filenames
+    .filter(filename => filename.endsWith('.mdx'))
     .map((filename) => {
       const filePath = path.join(postsDirectory, filename);
       const fileContents = fs.readFileSync(filePath, 'utf8');
