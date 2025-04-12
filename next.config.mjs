@@ -12,15 +12,6 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  // Ensure public files are properly copied to output
-  async rewrites() {
-    return [
-      {
-        source: '/rss.xml',
-        destination: '/rss.xml',
-      },
-    ];
-  },
 }
 
 export default nextConfig

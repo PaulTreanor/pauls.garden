@@ -69,11 +69,20 @@ function generateRSSFeed() {
     fs.mkdirSync(publicDir);
   }
   
-  // Write RSS feed to file
+  // Write RSS feed to file - both to public and directly to out directory
   fs.writeFileSync(
     path.join(publicDir, 'rss.xml'),
     rss
   );
+  
+  // Also write directly to out directory for Vercel deployments
+  const outDir = path.join(process.cwd(), 'out');
+  if (fs.existsSync(outDir)) {
+    fs.writeFileSync(
+      path.join(outDir, 'rss.xml'),
+      rss
+    );
+  }
   
   console.log('RSS feed generated successfully!');
 }
