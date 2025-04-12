@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import React from 'react'; // Import React
 import Link from 'next/link'
+import SearchBar from './components/SearchBar'
 
 export const metadata: Metadata = {
   title: 'My Digital Garden',
@@ -23,12 +24,8 @@ export default function RootLayout({
             <Link href="/2024-11-11-welcome-to-pauls-garden/" className="text-[#3a5a40] hover:underline">About</Link>
             </nav>
           </header>
-          <div className="mb-8 p-4 bg-[#e6ede8] rounded-lg text-[#3a5a40] text-sm">
-            🚧 This site is a work in progress!
-            <span className="flex items-center gap-2">
-				<span>I still need to add a search bar so use </span> <kbd className="px-1 py-0.5 bg-[#588157] text-white rounded">Ctrl/⌘ F</kbd> for now
-			</span>
-            
+          <div className="mb-8">
+            <SearchBar />
           </div>
           {children}
         </main>
