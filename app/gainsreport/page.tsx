@@ -50,7 +50,7 @@ export default function GainsReport() {
   
   return (
     <div className="container max-w-4xl mx-auto p-4">
-      <h1 className="text-3xl font-bold text-[#3a5a40] mb-4">Gains Report</h1>
+      <h1 className="text-3xl font-bold text-[#3a5a40] mb-4">GainsReport (my experimental workout log)</h1>
       <div className="iframe-container w-full overflow-hidden">
         <iframe
           ref={iframeRef}
