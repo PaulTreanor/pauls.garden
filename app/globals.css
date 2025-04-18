@@ -9,6 +9,19 @@
 }
 
 @layer components {
+  .iframe-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .iframe-container iframe {
+    border: none;
+    width: 100%;
+    min-height: 2000px; /* Tall enough for most content */
+  }
+}
+
+@layer components {
   .prose {
     @apply max-w-none;
   }
