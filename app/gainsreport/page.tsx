@@ -14,7 +14,7 @@ export default function GainsReport() {
       const resizeIframe = () => {
         try {
           // Set to a very tall height initially to ensure we capture full content
-          iframe.style.height = '4000px';
+          iframe.style.height = '6000px';
           
           // Wait a bit for content to load
           setTimeout(() => {
@@ -23,7 +23,7 @@ export default function GainsReport() {
               if (iframeBody) {
                 // Get the actual height of the iframe's content
                 const height = iframeBody.scrollHeight;
-                iframe.style.height = `${height + 50}px`; // Add some padding
+                iframe.style.height = `${height + 100}px`; // Add more padding
               }
             } catch (e) {
               console.log('Could not access iframe content - likely due to cross-origin restrictions');
@@ -49,17 +49,24 @@ export default function GainsReport() {
   }, []);
   
   return (
-    <div className="container max-w-4xl mx-auto p-4">
-      <h1 className="text-3xl font-bold text-[#3a5a40] mb-4">GainsReport (my experimental workout log)</h1>
-      <div className="iframe-container w-full overflow-hidden">
+    <div className="container max-w-full mx-auto p-0">
+      <h1 className="text-3xl font-bold text-[#3a5a40] mb-4 px-4 pt-4">GainsReport (my experimental workout log)</h1>
+      <div className="iframe-container w-full">
         <iframe
           ref={iframeRef}
           src="https://gainsreport.vercel.app/"
           title="GainsReport (my workout log)"
           className="w-full border-0"
-          style={{ minHeight: '4000px', overflow: 'hidden' }}
+          style={{ 
+            minHeight: '6000px', 
+            overflow: 'visible',
+            marginTop: '0px', // Ensure no negative space at top
+            display: 'block',
+            position: 'relative'
+          }}
           scrolling="no"
           allow="fullscreen"
+          frameBorder="0"
         />
       </div>
     </div>
