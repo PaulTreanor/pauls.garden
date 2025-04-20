@@ -23,9 +23,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-[#f8f5f2] text-[#594a4e] min-h-screen">
         <main className="max-w-2xl mx-auto px-4 py-8">
-          <header className="mb-8 flex justify-between items-center">
-            <h1 className="text-3xl font-semibold text-[#3a5a40]"><Link href="/">🌲 Pauls.Garden </Link></h1>
-            <nav className="flex items-center gap-4">
+          <header className="mb-8">
+          <h1 className="text-3xl font-semibold text-[#3a5a40] mb-4 text-center"><Link href="/">🌲 Pauls.Garden </Link></h1>
+            <nav className="flex justify-center items-center gap-8">
               <Link href="/2024-11-11-welcome-to-pauls-garden/" className="text-[#3a5a40] hover:underline">About</Link>
               <Link href="/gainsreport" className="text-[#3a5a40] hover:underline">Gainsreport</Link>
               <a href="/rss.xml" className="text-[#3a5a40] hover:underline flex items-center gap-1" target="_blank" rel="noopener noreferrer">
@@ -35,6 +35,7 @@ export default function RootLayout({
                 RSS
               </a>
             </nav>
+            
           </header>
           <div className="mb-8">
             <SearchBar />
